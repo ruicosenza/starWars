@@ -11,4 +11,6 @@ public class HomeController {
 		System.out.println("Entrando na home do Star Wars");
 		return "home";
 	}
+	
+	
 }

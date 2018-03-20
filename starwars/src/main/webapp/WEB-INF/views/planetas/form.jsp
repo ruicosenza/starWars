@@ -14,17 +14,17 @@
 	<form:form action="${s:mvcUrl('PC#gravar').build() }" method="POST" commandName="planeta">
 		<div>
 			<label>Nome</label> 
-			<input type="text" name="nome">
+			<form:input path="nome" />
 			<form:errors path="nome"/>
 		</div>
 		<div>
 			<label>Clima</label> 
-			<input type="text" name="clima">
+			<form:input path="clima" />
 			<form:errors path="clima"/>
 		</div>
 		<div>
 			<label>Terreno</label> 
-			<input type="text" name="terreno">
+			<form:input path="terreno"/>
 			<form:errors path="terreno"/>
 		</div>
 		<button type="submit">Cadastrar</button>

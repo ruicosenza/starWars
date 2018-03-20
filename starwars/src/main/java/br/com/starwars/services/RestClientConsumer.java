@@ -15,7 +15,7 @@ import retrofit.client.Response;
 @Component
 public class RestClientConsumer {
 
-	public ArrayList<String> getPlanetas( int i ) throws Exception {
+	public ArrayList<String> getPlaneta( int i ) throws Exception {
 		ArrayList<String> lista = new ArrayList<>();
         StarWarsApi.init();
         StarWars api = StarWarsApi.getApi();
@@ -24,7 +24,7 @@ public class RestClientConsumer {
 
 			@Override
 			public void success(Planet t, Response response) {
-				lista.add(t.name);				
+				lista.add(t.name);
 			}
 
 			@Override

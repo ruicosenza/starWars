@@ -11,7 +11,7 @@ public class Teste {
 		RestClientConsumer consumer = new RestClientConsumer();
 		
 		try {
-			ArrayList<String> planetas = consumer.getPlanetas(1);
+			ArrayList<String> planetas = consumer.getPlaneta(1);
 			String s = planetas.get(0);
 			System.out.println(s);
 		} catch (Exception e) {

@@ -24,4 +24,9 @@ public class PlanetaDao {
 	public List<Planeta> listar(){
 		return manager.createQuery("select p from Planeta p", Planeta.class).getResultList();
 	}
+
+	public void excluir(Integer id) {
+		manager.createQuery("delete from Planeta where id = :id").setParameter("id", id).executeUpdate();
+//		manager.flush();
+	}
 }

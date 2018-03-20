@@ -4,15 +4,19 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.starwars.controllers.HomeController;
 import br.com.starwars.dao.PlanetaDao;
+import br.com.starwars.services.RestClientConsumer;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, PlanetaDao.class})
-public class AppWebConfiguration {
+@ComponentScan(basePackageClasses={HomeController.class, PlanetaDao.class, RestClientConsumer.class})
+public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver(){
@@ -30,5 +34,15 @@ public class AppWebConfiguration {
 		messageSource.setCacheSeconds(1);
 		
 		return messageSource;
+	}
+	
+	@Override
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		configurer.enable();
+	}
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources");
 	}
 }
