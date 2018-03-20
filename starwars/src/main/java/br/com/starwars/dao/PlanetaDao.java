@@ -22,6 +22,6 @@ public class PlanetaDao {
 	}
 	
 	public List<Planeta> listar(){
-		return null;
+		return manager.createQuery("select p from Planeta p", Planeta.class).getResultList();
 	}
 }

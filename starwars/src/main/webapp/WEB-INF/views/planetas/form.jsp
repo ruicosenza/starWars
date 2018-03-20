@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +11,23 @@
 </head>
 <body>
 	<h1>Cadastro de um novo planeta</h1>
-	<form action="/starWars/planetas" method="POST">
+	<form:form action="${s:mvcUrl('PC#gravar').build() }" method="POST" commandName="planeta">
 		<div>
-			<label>Nome</label> <input type="text" name="nome">
+			<label>Nome</label> 
+			<input type="text" name="nome">
+			<form:errors path="nome"/>
 		</div>
 		<div>
-			<label>Clima</label> <input type="text" name="clima">
+			<label>Clima</label> 
+			<input type="text" name="clima">
+			<form:errors path="clima"/>
 		</div>
 		<div>
-			<label>Terreno</label> <input type="text" name="terreno">
+			<label>Terreno</label> 
+			<input type="text" name="terreno">
+			<form:errors path="terreno"/>
 		</div>
 		<button type="submit">Cadastrar</button>
-	</form>
+	</form:form>
 </body>
 </html>

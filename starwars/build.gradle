@@ -78,10 +78,16 @@ dependencies {
 			
 	compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
 	runtime 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
+	
+	compile 'org.hibernate:hibernate-validator:4.1.0.Final'
+	runtime 'org.hibernate:hibernate-validator:4.1.0.Final'
 			
 	compile 'org.springframework:spring-orm:4.1.0.RELEASE'
 	runtime 'org.springframework:spring-orm:4.1.0.RELEASE'
 			
 	compile 'mysql:mysql-connector-java:5.1.15'
 	runtime 'mysql:mysql-connector-java:5.1.15'
+	
+	compile 'javax.validation:validation-api:1.0.0.GA'
+	runtime 'javax.validation:validation-api:1.0.0.GA'
 }
