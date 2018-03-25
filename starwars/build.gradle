@@ -32,8 +32,6 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
-    compile 'com.github.ahodieb:SWAPI-JAVA:master'
-    
     compile 'org.springframework:spring-webmvc:4.1.0.RELEASE'
 	runtime 'org.springframework:spring-webmvc:4.1.0.RELEASE'
 	

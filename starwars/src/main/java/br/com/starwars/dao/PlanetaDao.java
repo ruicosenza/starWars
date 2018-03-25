@@ -27,6 +27,5 @@ public class PlanetaDao {
 
 	public void excluir(Integer id) {
 		manager.createQuery("delete from Planeta where id = :id").setParameter("id", id).executeUpdate();
-//		manager.flush();
 	}
 }

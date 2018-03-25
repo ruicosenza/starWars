@@ -12,10 +12,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.starwars.controllers.HomeController;
 import br.com.starwars.dao.PlanetaDao;
-import br.com.starwars.services.RestClientConsumer;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, PlanetaDao.class, RestClientConsumer.class})
+@ComponentScan(basePackageClasses={HomeController.class, PlanetaDao.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
@@ -43,6 +42,6 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources");
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 }

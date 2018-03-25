@@ -10,8 +10,8 @@
 <title>Cadastro de planeta</title>
 </head>
 <body>
-	<h1>Cadastro de um novo planeta</h1>
-	<form:form action="${s:mvcUrl('PC#gravar').build() }" method="POST" commandName="planeta">
+	<h1 align="center">Cadastro de um novo planeta</h1>
+	<form:form action="${s:mvcUrl('PC#gravar').build() }" method="POST" commandName="planeta" cssStyle="text-align: center" >
 		<div>
 			<label>Nome</label> 
 			<form:input path="nome" />
